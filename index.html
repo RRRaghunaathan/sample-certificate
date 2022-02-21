@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div>
+            <img src="deletable.png">
+        </div>
+        <div class="container vertical-center-row" style="width:50%;margin-top:8%;align-items:center;margin-left:35%;">
+        <form onsubmit="redirection(event)" autocomplete="off" style="width:50%">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="text-center text-danger" id="errormsg">
+
+            </div>
+          </form>
+        </div>
+          <script>
+              function redirection(e){
+                e.preventDefault();
+                var students={
+                    michael:"https://view.demo.print2block.in/docs/9d6431e6372b35a5e5abcb41209a3090890af1ed4c58a2f26ff3681ba4c9f17a",
+                    shaun:"https://view.demo.print2block.in/docs/9d6431e6372b35a5e5abcb41209a3090890af1ed4c58a2f26ff3681ba4c9f17a",
+                    ethan:"https://view.demo.print2block.in/docs/9d6431e6372b35a5e5abcb41209a3090890af1ed4c58a2f26ff3681ba4c9f17a",
+                    vanessa:"https://view.demo.print2block.in/docs/9d6431e6372b35a5e5abcb41209a3090890af1ed4c58a2f26ff3681ba4c9f17a",
+                    lisa:"https://view.demo.print2block.in/docs/9d6431e6372b35a5e5abcb41209a3090890af1ed4c58a2f26ff3681ba4c9f17a"
+                }
+                var uname = document.getElementById("username").value;
+                uname=uname.toLowerCase();
+                if(uname in students){
+                    let link=students[uname];
+                    console.log(link);
+                    window.location.href=link;
+                }
+                else{
+                    document.getElementById("errormsg").innerHTML="please enter valid credentials"
+                }
+              }
+          </script>
+
+    </body>
+</html>
